@@ -1,0 +1,98 @@
+﻿@import "../css/base.scss";
+$baseColor: #fcffb4;
+$viewW: 750px;
+$bgColor: #fcfff8;
+
+.zmiti-index-main-ui {
+	overflow: hidden;
+	width: 10rem;
+	left: 50% !important;
+	margin-left: -$viewW/2;
+	background: $bgColor;
+
+	.zmiti-btn-group{
+		@include pos(a);
+		z-index: 10;
+		width: 100%;
+		height: 100%;
+		
+		//@include displayBox(horizontal);		
+		.zmiti-wyBtn,.zmiti-bzBtn,.zmiti-dbBtn {
+			@include pos(a);
+			width:2rem;
+			left: 0;
+			top: 60%;
+			@include animation(scale .7s infinite linear alternate);
+		}
+
+		.zmiti-bzBtn{
+			left: 4rem;
+			top: 73%;
+			@include animation(scale .7s .4s infinite linear alternate);
+		}
+		.zmiti-wyBtn{
+			right: 0;
+			left: auto;
+		}
+	}
+
+
+}
+
+.zmiti-loading {
+	z-index: 1000;
+
+	.zmiti-loading-ui {
+		width: 6rem;
+		left: 2rem;
+		@include pos(a);
+		top: 6rem;
+
+		.zmiti-loading-bar {
+			width: 2rem;
+			@include br(10px);
+
+			&:before {
+				content: '';
+				@include br(10px);
+				@include pos(a);
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				box-shadow: 0 0 3px rgba(255, 255, 255, .5);
+			}
+
+			//height: 1rem;
+			@include pos(r);
+			margin: 0 auto;
+
+			.zmiti-target {
+				$size: .4rem;
+				width: $size;
+				height: $size;
+				@include br();
+				background: #fff;
+				left: 50%;
+				top: .4rem;
+				@include pos(a);
+				margin-left: -$size/2;
+				@include animation(scale linear 2s  infinite alternate);
+			}
+
+		}
+
+		.zmiti-progress {
+			margin-top: .5rem;
+			text-align: center;
+			color: #fff;
+			font-family: Georgia;
+			font-size: .7rem;
+		}
+
+	}
+
+}
+
+.zmiti-play {
+}
