@@ -1,5 +1,5 @@
 <template>
-	<div  class="lt-full zmiti-music-main-ui ">
+	<div  class="lt-full zmiti-music-main-ui" :style='{height:"10vh"}'>
 		<audio ref='music' v-for='audio in audios' :src='audio.src' :autoplay="audio.autoplay" :loop="audio.loop"></audio>
 
 		<div  @click='toggleMusic' class='zmiti-play' :class='{"rotate":rotate}' :style="playStyle">
@@ -83,8 +83,8 @@
 				})
 			})
 
-
 			obserable.on('pauseVoice',(key)=>{
+
 				this.audios.forEach((audio,i)=>{
 					if(i>0 ){
 						if(audio.name === key){

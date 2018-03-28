@@ -1,6 +1,8 @@
 import Vue from "vue";
 import './components/css/index.css';
 import Index from './components/index/index';
+import Upload from './components/upload/index';
+import Main from './components/main/index';
 import Music from './components/music/index';
 import Obserable from './components/lib/obserable';
 import {
@@ -49,6 +51,8 @@ new Vue({
 	*/
 	template: `<div>
 		<Index  v-if='show && !isShare'  :obserable='obserable'></Index>
+		<Main  v-if='show && !isShare'  :obserable='obserable'></Main>
+		<Upload  v-if='show && !isShare'  :obserable='obserable'></Upload>
 		<Music   :obserable='obserable'></Music>
 		
 		
@@ -113,7 +117,9 @@ new Vue({
 	},
 	components: {
 		Index,
-		Music
+		Music,
+		Main,
+		Upload
 	},
 	mounted() {
 

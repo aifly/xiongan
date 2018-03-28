@@ -13,6 +13,7 @@ function vueTouch(el, binding, type) {
     this.vueLeave = true;
     this.longTouch = true;
     this.vueCallBack = typeof(binding.value) == "object" ? binding.value.fn : binding.value;
+  
     this.obj.addEventListener("touchstart", function(e) {
         _this.start(e);
     }, false);
@@ -62,6 +63,7 @@ vueTouch.prototype = {
             };
         } else {
             if (this.longTouch && this.vueMoves) {
+
                 this.touchType == "tap" && this.vueCallBack(this.binding.value, e);
                 this.vueLeave = false
             };

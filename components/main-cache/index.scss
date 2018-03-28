@@ -1,0 +1,13 @@
+﻿@import "../css/base.scss";
+$baseColor: #fcffb4;
+$viewW: 750px;
+$bgColor: #fcfff8;
+$color: #fffb88;
+
+.zmiti-main-main-ui{
+	&>canvas{
+		@include pos(a);
+		left: 0;top: 0;
+		
+	}
+}
