@@ -7,8 +7,8 @@
 			<div class="zmiti-main-canvas-C"  style="z-index: 10"   :style="{zIndex:isNext?9:19}">
 				<canvas :width='viewW' :height="viewH" ref='canvas1'  ></canvas>
 			</div>
-			<div v-if='!animating'  v-tap='next' style='position:absolute;z-index: 105;border:1px solid red;left: 20px;top:100px;'  >下一个</div>
-			<div v-if='!animating' v-tap='prev' style='position:absolute;z-index: 105;border:1px solid red;left: 120px;top:100px;' >上一个</div>
+			<div v-if='!animating'  v-tap='[next]' style='position:absolute;z-index: 105;border:1px solid red;left: 20px;top:100px;'  >下一个</div>
+			<div v-if='!animating' v-tap='[prev]' style='position:absolute;z-index: 105;border:1px solid red;left: 120px;top:100px;' >上一个</div>
 			<transition name='team'>
 				<div v-if='showTeam' :style='{background:"#fff url("+imgs.teamBg+") no-repeat center top",backgroundSize:"cover"}' class="zmiti-team-main-ui lt-full" @touchend='showTeam = false'>
 					<div class="zmiti-team-main">

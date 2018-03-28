@@ -5,7 +5,7 @@
 
 			<div class="zmiti-upload-bottom" ref='list'>
 				<ul :style="{width:mainImgList.length*2.4+'rem'}">
-					<li v-tap='tab(i)' v-for='(img,i) in mainImgList'>
+					<li v-tap='[tab,i]' v-for='(img,i) in mainImgList'>
 						<div :style="{background: 'url('+img[0].url+') no-repeat center center',backgroundSize:'cover'}"></div>
 						<div>2018/4/01</div>
 					</li>

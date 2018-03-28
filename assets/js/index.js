@@ -22282,8 +22282,8 @@
 	// 			<div class="zmiti-main-canvas-C"  style="z-index: 10"   :style="{zIndex:isNext?9:19}">
 	// 				<canvas :width='viewW' :height="viewH" ref='canvas1'  ></canvas>
 	// 			</div>
-	// 			<div v-if='!animating'  v-tap='next' style='position:absolute;z-index: 105;border:1px solid red;left: 20px;top:100px;'  >下一个</div>
-	// 			<div v-if='!animating' v-tap='prev' style='position:absolute;z-index: 105;border:1px solid red;left: 120px;top:100px;' >上一个</div>
+	// 			<div v-if='!animating'  v-tap='[next]' style='position:absolute;z-index: 105;border:1px solid red;left: 20px;top:100px;'  >下一个</div>
+	// 			<div v-if='!animating' v-tap='[prev]' style='position:absolute;z-index: 105;border:1px solid red;left: 120px;top:100px;' >上一个</div>
 	// 			<transition name='team'>
 	// 				<div v-if='showTeam' :style='{background:"#fff url("+imgs.teamBg+") no-repeat center top",backgroundSize:"cover"}' class="zmiti-team-main-ui lt-full" @touchend='showTeam = false'>
 	// 					<div class="zmiti-team-main">
@@ -22500,7 +22500,7 @@
 /* 26 */
 /***/ (function(module, exports) {
 
-	module.exports = "\r\n\t<transition name='main'>\r\n\t\t<div class=\"lt-full zmiti-main-main-ui \"  v-show='show' ref='page'>\r\n\t\t\t<div class=\"zmiti-main-canvas-C\"    :style=\"{zIndex:isNext?19:10}\">\r\n\t\t\t\t<canvas :width='viewW' :height=\"viewH\" ref='canvas'  ></canvas>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"zmiti-main-canvas-C\"  style=\"z-index: 10\"   :style=\"{zIndex:isNext?9:19}\">\r\n\t\t\t\t<canvas :width='viewW' :height=\"viewH\" ref='canvas1'  ></canvas>\r\n\t\t\t</div>\r\n\t\t\t<div v-if='!animating'  v-tap='next' style='position:absolute;z-index: 105;border:1px solid red;left: 20px;top:100px;'  >下一个</div>\r\n\t\t\t<div v-if='!animating' v-tap='prev' style='position:absolute;z-index: 105;border:1px solid red;left: 120px;top:100px;' >上一个</div>\r\n\t\t\t<transition name='team'>\r\n\t\t\t\t<div v-if='showTeam' :style='{background:\"#fff url(\"+imgs.teamBg+\") no-repeat center top\",backgroundSize:\"cover\"}' class=\"zmiti-team-main-ui lt-full\" @touchend='showTeam = false'>\r\n\t\t\t\t\t<div class=\"zmiti-team-main\">\r\n\t\t\t\t\t\t<h1>\r\n\t\t\t\t\t\t\t<div>制作团队</div>\r\n\t\t\t\t\t\t</h1>\r\n\t\t\t\t\t\t<section><span>总策划：</span><span>刘思扬</span></section>\r\n\t\t\t\t\t\t<section><span>总监制：</span><span>刘洁</span><span>陈凯星</span><span>冯瑛冰</span></section>\r\n\t\t\t\t\t\t<section><span>统筹：</span><span>兰红光</span><span>马书平</span></section>\r\n\t\t\t\t\t\t<section><span>监制：</span><span>葛素表</span><span>陈知春</span><span>于卫亚</span><span>曹建礼</span><span  style=\"opacity:0\">曹建建礼</span><span>李代祥</span><span>周年钧</span><span>何莉</span></section>\t\r\n\t\t\t\t\t\t<section><span>设计：</span><span>赵丹阳</span></section>\r\n\t\t\t\t\t\t<section><span>记者：</span><span>李尕</span><span>路滨琪</span><span>潘旭</span><span>赖星</span><span>孔令杭</span></section>\r\n\t\t\t\t\t\t<section><span>编辑：</span><span>王绥翊</span><span>姜子炜</span><span>叶心可</span><span>黄南希</span><span style=\"opacity:0;\">徐徐祥达</span><span>徐祥达</span></section>\r\n\t\t\t\t\t\t<section><span>技术支持：</span><span>雷风侠工作室</span></section>\r\n\t\t\t\t\t\t<section  style=\"margin-top: 30px\" class=\"zmiti-copyright\"><span>新华社新媒体中心、摄影部联合出品</span></section>\r\n\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t<div class=\"zmiti-back\">返回</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</transition>\r\n\t\t</div>\r\n\t</transition>\r\n";
+	module.exports = "\r\n\t<transition name='main'>\r\n\t\t<div class=\"lt-full zmiti-main-main-ui \"  v-show='show' ref='page'>\r\n\t\t\t<div class=\"zmiti-main-canvas-C\"    :style=\"{zIndex:isNext?19:10}\">\r\n\t\t\t\t<canvas :width='viewW' :height=\"viewH\" ref='canvas'  ></canvas>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"zmiti-main-canvas-C\"  style=\"z-index: 10\"   :style=\"{zIndex:isNext?9:19}\">\r\n\t\t\t\t<canvas :width='viewW' :height=\"viewH\" ref='canvas1'  ></canvas>\r\n\t\t\t</div>\r\n\t\t\t<div v-if='!animating'  v-tap='[next]' style='position:absolute;z-index: 105;border:1px solid red;left: 20px;top:100px;'  >下一个</div>\r\n\t\t\t<div v-if='!animating' v-tap='[prev]' style='position:absolute;z-index: 105;border:1px solid red;left: 120px;top:100px;' >上一个</div>\r\n\t\t\t<transition name='team'>\r\n\t\t\t\t<div v-if='showTeam' :style='{background:\"#fff url(\"+imgs.teamBg+\") no-repeat center top\",backgroundSize:\"cover\"}' class=\"zmiti-team-main-ui lt-full\" @touchend='showTeam = false'>\r\n\t\t\t\t\t<div class=\"zmiti-team-main\">\r\n\t\t\t\t\t\t<h1>\r\n\t\t\t\t\t\t\t<div>制作团队</div>\r\n\t\t\t\t\t\t</h1>\r\n\t\t\t\t\t\t<section><span>总策划：</span><span>刘思扬</span></section>\r\n\t\t\t\t\t\t<section><span>总监制：</span><span>刘洁</span><span>陈凯星</span><span>冯瑛冰</span></section>\r\n\t\t\t\t\t\t<section><span>统筹：</span><span>兰红光</span><span>马书平</span></section>\r\n\t\t\t\t\t\t<section><span>监制：</span><span>葛素表</span><span>陈知春</span><span>于卫亚</span><span>曹建礼</span><span  style=\"opacity:0\">曹建建礼</span><span>李代祥</span><span>周年钧</span><span>何莉</span></section>\t\r\n\t\t\t\t\t\t<section><span>设计：</span><span>赵丹阳</span></section>\r\n\t\t\t\t\t\t<section><span>记者：</span><span>李尕</span><span>路滨琪</span><span>潘旭</span><span>赖星</span><span>孔令杭</span></section>\r\n\t\t\t\t\t\t<section><span>编辑：</span><span>王绥翊</span><span>姜子炜</span><span>叶心可</span><span>黄南希</span><span style=\"opacity:0;\">徐徐祥达</span><span>徐祥达</span></section>\r\n\t\t\t\t\t\t<section><span>技术支持：</span><span>雷风侠工作室</span></section>\r\n\t\t\t\t\t\t<section  style=\"margin-top: 30px\" class=\"zmiti-copyright\"><span>新华社新媒体中心、摄影部联合出品</span></section>\r\n\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t<div class=\"zmiti-back\">返回</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</transition>\r\n\t\t</div>\r\n\t</transition>\r\n";
 
 /***/ }),
 /* 27 */
@@ -22757,120 +22757,78 @@
 /* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	var __WEBPACK_AMD_DEFINE_RESULT__;/*! 
+	 * vue-tap.js 
+	 * by weijianhua  https://github.com/weijhfly/vue-tap 
+	*/
+	'use strict';
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 	var _vue = __webpack_require__(1);
 
 	var _vue2 = _interopRequireDefault(_vue);
 
-	function vueTouch(el, binding, type) {
-	    var _this = this;
-	    this.obj = el;
-	    this.binding = binding;
-	    this.touchType = type;
-	    this.vueTouches = {
-	        x: 0,
-	        y: 0
-	    };
-	    this.vueMoves = true;
-	    this.vueLeave = true;
-	    this.longTouch = true;
-	    this.vueCallBack = typeof binding.value == "object" ? binding.value.fn : binding.value;
-
-	    this.obj.addEventListener("touchstart", function (e) {
-	        _this.start(e);
-	    }, false);
-	    this.obj.addEventListener("touchend", function (e) {
-	        _this.end(e);
-	    }, false);
-	    this.obj.addEventListener("touchmove", function (e) {
-	        _this.move(e);
-	    }, false);
-	};
-	vueTouch.prototype = {
-	    start: function start(e) {
-	        this.vueMoves = true;
-	        this.vueLeave = true;
-	        this.longTouch = true;
-	        this.vueTouches = {
-	            x: e.changedTouches[0].pageX,
-	            y: e.changedTouches[0].pageY
-	        };
-	        this.time = setTimeout((function () {
-	            if (this.vueLeave && this.vueMoves) {
-	                this.touchType == "longtap" && this.vueCallBack(this.binding.value, e);
-	                this.longTouch = false;
+	;(function (factory) {
+	    if (true) {
+	        !(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+	            return factory;
+	        }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	    } else if (typeof exports == "object") {
+	        module.exports = factory;
+	    } else {
+	        _vue2['default'].use(factory);
+	    }
+	})({
+	    master: {
+	        bind: function bind(el, binding) {
+	            var isTouch = ("ontouchend" in document);
+	            el.exec = function (e) {
+	                var data = binding.value;
+	                data[0].apply(this, data.slice(1));
 	            };
-	        }).bind(this), 1000);
-	    },
-	    end: function end(e) {
-	        var disX = e.changedTouches[0].pageX - this.vueTouches.x;
-	        var disY = e.changedTouches[0].pageY - this.vueTouches.y;
-	        clearTimeout(this.time);
-	        if (Math.abs(disX) > 10 || Math.abs(disY) > 100) {
-	            this.touchType == "swipe" && this.vueCallBack(this.binding.value, e);
-	            if (Math.abs(disX) > Math.abs(disY)) {
-	                if (disX > 10) {
-	                    this.touchType == "swiperight" && this.vueCallBack(this.binding.value, e);
-	                };
-	                if (disX < -10) {
-	                    this.touchType == "swipeleft" && this.vueCallBack(this.binding.value, e);
-	                };
+	            if (isTouch) {
+	                //touchstart 
+	                el.addEventListener('touchstart', function (e) {
+	                    binding.modifiers.stop && e.stopPropagation();
+	                    var t = e.touches[0];
+	                    el.startX = t.clientX;
+	                    el.startY = t.clientY;
+	                    el.sTime = +new Date();
+	                });
+	                //touchend 
+	                el.addEventListener('touchend', function (e) {
+	                    binding.modifiers.stop && e.stopPropagation();
+	                    var t = e.changedTouches[0];
+	                    el.endX = t.clientX;
+	                    el.endY = t.clientY;
+	                    if (+new Date() - el.sTime < 300) {
+	                        if (Math.abs(el.endX - el.startX) + Math.abs(el.endY - el.startY) < 20) {
+	                            e.preventDefault();
+	                            el.exec();
+	                        }
+	                    }
+	                });
 	            } else {
-	                if (disY > 10) {
-	                    this.touchType == "swipedown" && this.vueCallBack(this.binding.value, e);
-	                };
-	                if (disY < -10) {
-	                    this.touchType == "swipeup" && this.vueCallBack(this.binding.value, e);
-	                };
+	                //click 
+	                el.addEventListener('click', function (e) {
+	                    binding.modifiers.stop && e.stopPropagation();
+	                    el.exec();
+	                });
+	            }
+	        },
+	        componentUpdated: function componentUpdated(el, binding) {
+	            el.exec = function () {
+	                var data = binding.value;
+	                data[0].apply(this, data.slice(1));
 	            };
-	        } else {
-	            if (this.longTouch && this.vueMoves) {
-
-	                this.touchType == "tap" && this.vueCallBack(this.binding.value, e);
-	                this.vueLeave = false;
-	            };
-	        };
+	        },
+	        unbind: function unbind(el) {
+	            el.exec = null;
+	        }
 	    },
-	    move: function move(e) {
-	        this.vueMoves = false;
-	    }
-	};
-	_vue2["default"].directive("tap", {
-	    bind: function bind(el, binding) {
-	        new vueTouch(el, binding, "tap");
-	    }
-	});
-	_vue2["default"].directive("swipe", {
-	    bind: function bind(el, binding) {
-	        new vueTouch(el, binding, "swipe");
-	    }
-	});
-	_vue2["default"].directive("swipeleft", {
-	    bind: function bind(el, binding) {
-	        new vueTouch(el, binding, "swipeleft");
-	    }
-	});
-	_vue2["default"].directive("swiperight", {
-	    bind: function bind(el, binding) {
-	        new vueTouch(el, binding, "swiperight");
-	    }
-	});
-	_vue2["default"].directive("swipedown", {
-	    bind: function bind(el, binding) {
-	        new vueTouch(el, binding, "swipedown");
-	    }
-	});
-	_vue2["default"].directive("swipeup", {
-	    bind: function bind(el, binding) {
-	        new vueTouch(el, binding, "swipeup");
-	    }
-	});
-	_vue2["default"].directive("longtap", {
-	    bind: function bind(el, binding) {
-	        new vueTouch(el, binding, "longtap");
+	    install: function install() {
+	        _vue2['default'].directive('tap', this.master);
 	    }
 	});
 
@@ -22907,7 +22865,7 @@
 	//
 	// 			<div class="zmiti-upload-bottom" ref='list'>
 	// 				<ul :style="{width:mainImgList.length*2.4+'rem'}">
-	// 					<li v-tap='tab(i)' v-for='(img,i) in mainImgList'>
+	// 					<li v-tap='[tab,i]' v-for='(img,i) in mainImgList'>
 	// 						<div :style="{background: 'url('+img[0].url+') no-repeat center center',backgroundSize:'cover'}"></div>
 	// 						<div>2018/4/01</div>
 	// 					</li>
@@ -23026,7 +22984,7 @@
 /* 36 */
 /***/ (function(module, exports) {
 
-	module.exports = "\r\n\t<transition name='upload'>\r\n\t\t<div class=\"lt-full zmiti-upload-main-ui \"  v-show='show' ref='page'>\r\n\t\t\t<div class=\"lt-full \" :style=\"{background: 'url('+imgs.img1+') no-repeat center center',backgroundSize:'cover','-webkit-filter':'blur(14px)'}\"></div>\r\n\r\n\t\t\t<div class=\"zmiti-upload-bottom\" ref='list'>\r\n\t\t\t\t<ul :style=\"{width:mainImgList.length*2.4+'rem'}\">\r\n\t\t\t\t\t<li v-tap='tab(i)' v-for='(img,i) in mainImgList'>\r\n\t\t\t\t\t\t<div :style=\"{background: 'url('+img[0].url+') no-repeat center center',backgroundSize:'cover'}\"></div>\r\n\t\t\t\t\t\t<div>2018/4/01</div>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t\r\n\t</transition>\r\n";
+	module.exports = "\r\n\t<transition name='upload'>\r\n\t\t<div class=\"lt-full zmiti-upload-main-ui \"  v-show='show' ref='page'>\r\n\t\t\t<div class=\"lt-full \" :style=\"{background: 'url('+imgs.img1+') no-repeat center center',backgroundSize:'cover','-webkit-filter':'blur(14px)'}\"></div>\r\n\r\n\t\t\t<div class=\"zmiti-upload-bottom\" ref='list'>\r\n\t\t\t\t<ul :style=\"{width:mainImgList.length*2.4+'rem'}\">\r\n\t\t\t\t\t<li v-tap='[tab,i]' v-for='(img,i) in mainImgList'>\r\n\t\t\t\t\t\t<div :style=\"{background: 'url('+img[0].url+') no-repeat center center',backgroundSize:'cover'}\"></div>\r\n\t\t\t\t\t\t<div>2018/4/01</div>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t</ul>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t\t\r\n\t</transition>\r\n";
 
 /***/ }),
 /* 37 */

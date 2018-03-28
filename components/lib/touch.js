@@ -1,110 +1,66 @@
+/*! 
+ * vue-tap.js 
+ * by weijianhua  https://github.com/weijhfly/vue-tap 
+*/  
 import Vue from 'vue';
-
-function vueTouch(el, binding, type) {
-    var _this = this;
-    this.obj = el;
-    this.binding = binding;
-    this.touchType = type;
-    this.vueTouches = {
-        x: 0,
-        y: 0
-    };
-    this.vueMoves = true;
-    this.vueLeave = true;
-    this.longTouch = true;
-    this.vueCallBack = typeof(binding.value) == "object" ? binding.value.fn : binding.value;
+;(function (factory) {  
+    if (typeof define === 'function' && define.amd) {  
+        define(function(){return factory;});  
+    }else if (typeof exports == "object") {  
+        module.exports = factory;  
+    }else{  
+        Vue.use(factory);  
+    }  
+}({  
+   master:{  
+        bind: function (el, binding) {  
+            var isTouch = "ontouchend" in document;  
+            el.exec = function (e) {  
+                var data = binding.value;  
+                data[0].apply(this, data.slice(1));  
+            };  
+            if (isTouch) {  
+                //touchstart  
+                el.addEventListener('touchstart', function (e) {  
+                    binding.modifiers.stop && (e.stopPropagation());  
+                    var t = e.touches[0];  
+                    el.startX = t.clientX;  
+                    el.startY = t.clientY;  
+                    el.sTime = + new Date;  
+                });  
+                //touchend  
+                el.addEventListener('touchend', function (e) {  
+                    binding.modifiers.stop && (e.stopPropagation());  
+                    var t = e.changedTouches[0];  
+                    el.endX = t.clientX;  
+                    el.endY = t.clientY;  
+                    if((+ new Date)-el.sTime<300){  
+                        if(Math.abs(el.endX-el.startX)+Math.abs(el.endY-el.startY)<20){  
+                            e.preventDefault();  
+                            el.exec();  
+                        }  
+                    }  
+                });  
+            }else {  
+                //click  
+                el.addEventListener('click', function (e) {  
+                  binding.modifiers.stop && (e.stopPropagation());  
+                  el.exec();  
+                });  
   
-    this.obj.addEventListener("touchstart", function(e) {
-        _this.start(e);
-    }, false);
-    this.obj.addEventListener("touchend", function(e) {
-        _this.end(e);
-    }, false);
-    this.obj.addEventListener("touchmove", function(e) {
-        _this.move(e);
-    }, false);
-};
-vueTouch.prototype = {
-    start: function(e) {
-        this.vueMoves = true;
-        this.vueLeave = true;
-        this.longTouch = true;
-        this.vueTouches = {
-            x: e.changedTouches[0].pageX,
-            y: e.changedTouches[0].pageY
-        };
-        this.time = setTimeout(function() {
-            if (this.vueLeave && this.vueMoves) {
-                this.touchType == "longtap" && this.vueCallBack(this.binding.value, e);
-                this.longTouch = false;
-            };
-        }.bind(this), 1000);
-    },
-    end: function(e) {
-        var disX = e.changedTouches[0].pageX - this.vueTouches.x;
-        var disY = e.changedTouches[0].pageY - this.vueTouches.y;
-        clearTimeout(this.time);
-        if (Math.abs(disX) > 10 || Math.abs(disY) > 100) {
-            this.touchType == "swipe" && this.vueCallBack(this.binding.value, e);
-            if (Math.abs(disX) > Math.abs(disY)) {
-                if (disX > 10) {
-                    this.touchType == "swiperight" && this.vueCallBack(this.binding.value, e);
-                };
-                if (disX < -10) {
-                    this.touchType == "swipeleft" && this.vueCallBack(this.binding.value, e);
-                };
-            } else {
-                if (disY > 10) {
-                    this.touchType == "swipedown" && this.vueCallBack(this.binding.value, e);
-                };
-                if (disY < -10) {
-                    this.touchType == "swipeup" && this.vueCallBack(this.binding.value, e);
-                };
-            };
-        } else {
-            if (this.longTouch && this.vueMoves) {
-
-                this.touchType == "tap" && this.vueCallBack(this.binding.value, e);
-                this.vueLeave = false
-            };
-        };
-    },
-    move: function(e) {
-        this.vueMoves = false;
-    }
-};
-Vue.directive("tap", {
-    bind: function(el, binding) {
-        new vueTouch(el, binding, "tap");
-    }
-});
-Vue.directive("swipe", {
-    bind: function(el, binding) {
-        new vueTouch(el, binding, "swipe");
-    }
-});
-Vue.directive("swipeleft", {
-    bind: function(el, binding) {
-        new vueTouch(el, binding, "swipeleft");
-    }
-});
-Vue.directive("swiperight", {
-    bind: function(el, binding) {
-        new vueTouch(el, binding, "swiperight");
-    }
-});
-Vue.directive("swipedown", {
-    bind: function(el, binding) {
-        new vueTouch(el, binding, "swipedown");
-    }
-});
-Vue.directive("swipeup", {
-    bind: function(el, binding) {
-        new vueTouch(el, binding, "swipeup");
-    }
-});
-Vue.directive("longtap", {
-    bind: function(el, binding) {
-        new vueTouch(el, binding, "longtap");
-    }
-});
+            }  
+        },  
+        componentUpdated : function(el,binding) {  
+            el.exec = function () {  
+                var data = binding.value;  
+                data[0].apply(this, data.slice(1));  
+            };  
+        },  
+        unbind: function (el) {  
+            el.exec = null;  
+        }  
+   },  
+   install:function(){  
+       Vue.directive('tap', this.master);  
+   }  
+}))  
