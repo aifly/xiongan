@@ -11,8 +11,168 @@ $color: #fffb88;
 
 	}
 
+	opacity:0;
+	z-index: -1;
+	
+	&.show{
+		opacity: 1;
+		z-index: 100;
+	}
+
+	@include transition(1.5s);
+	&.text-enter-active, &.text-leave-active {
+		
+		//@include transform(translate3d(0,20px,0));
+	}
+
+	&.text-enter, &.text-leave-to {
+		opacity: 0;
+	}
+
 	&>.zmiti-main-canvas-C{
 		@include pos(a);
 		left: 0;top: 0;		
+	}
+
+	.zmiti-img-text{
+
+	
+		&.text-enter-active, &.text-leave-active {
+			@include transition(.5s);
+			//@include transform(translate3d(0,20px,0));
+		}
+
+		&.text-enter, &.text-leave-to {
+			opacity: 0;
+			@include transform(translate3d(0,-30px,0));
+		}
+
+		@include pos(a);
+		width: 8rem;
+		left: 1rem;
+		top: 4rem;
+		z-index: 40;
+		padding: 24px;
+		box-sizing:border-box;
+		&>img.zmiti-text-bg{
+			@include pos(a);
+			width: 100%;
+			height:100%;
+			z-index: 0;
+		}
+		&>h4,&>div{
+			@include pos(r);
+			z-index: 1;
+			text-indent: 2em;
+			margin-left: 40px;
+			margin-top: 10px;
+			color:#828a8f;
+		}
+		&>h4{
+			text-indent: 0;
+			font-size: 36px;
+		}
+		&>div{
+			margin-top: 20px;
+		}
+		&>.zmiti-caidai{
+			@include pos(a);
+			left: -1.9rem;
+			width: 1.5rem;
+			top: 1rem;
+
+		}
+
+		&>.zmiti-caidai1{
+			left: auto;
+			right: .4rem;
+			top: -1rem;
+			width: .5rem;
+		}
+
+
+	}
+
+	.zmiti-title{
+		@include pos(a);
+		z-index: 20;
+		top: 0;
+		left: 0;
+	}
+
+	.zmiti-year{
+		@include pos(a);
+		z-index: 20;
+		top: .2rem;
+		right: 1.2rem;
+	}
+
+	.zmiti-photo{
+		@include pos(a);
+		width: 2rem;
+		z-index: 20;
+		bottom: 1rem;
+		left: 4rem;
+		text-align: center;
+		color:#fff;
+	}
+
+	.zmiti-next,.zmiti-prev{
+		@include pos(a);
+
+		width: 1.4rem;
+		height: 1rem;
+		left: .4rem;
+		bottom: .4rem;
+		z-index: 44;
+		z-index: 100;
+
+		&:before,&:after{
+			content:"";
+			@include pos(a);
+			left: 0;
+			top: 60%;
+			width: 100%;
+			height: .07rem;
+			background: #fff;
+			border-top-left-radius: 10px;
+			border-bottom-left-radius: 10px;
+		}
+
+		&:after{
+			width: 30%;
+			@include transform(rotate(-40deg));
+			@include transformOrigin(left);
+			
+		}
+
+	}
+
+
+
+	.zmiti-next{
+		left: auto;
+		right: .4rem;
+		//border:1px solid red;
+		&:before,&:after{
+			content:"";
+			@include pos(a);
+			left: 0;
+			top: 60%;
+			width: 100%;
+			height: .07rem;
+			background: #fff;
+			border-top-left-radius: 10px;
+			border-bottom-left-radius: 10px;
+		}
+
+		&:after{
+			width: 30%;
+			left: auto;
+			right: 0;
+			@include transform(rotate(40deg));
+			@include transformOrigin(right);
+			
+		}
 	}
 }

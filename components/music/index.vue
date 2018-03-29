@@ -35,6 +35,7 @@
 		methods:{
 
 			toggleMusic() {
+
 				var music = this.$refs['music'][0];
 				music[music.paused ? 'play' : 'pause']()
 			},
@@ -42,6 +43,7 @@
 				this.audios.forEach((audio,i)=>{
 					if(i>0){
 						if(audio.autoplay){
+
 							audio.muted = true;//静音
 							audio.play();
 						}
@@ -52,21 +54,24 @@
 		mounted(){
 
 			
+			
 			var {obserable} = this;
+
+
+
 
 			var audio = this.$refs['music'][0];
 			var len = audio;
 			len && $(audio).on('play', () => {
+
 				this.rotate = true;
 			}).on('pause', () => {
 				this.rotate = false;
 			});
-
-
 			
 
-			len && audio.play();
 
+			len && audio.play();
 			audio.volume = .1;
 
 			this.playAudioMuted();
@@ -84,6 +89,7 @@
 			})
 
 			obserable.on('pauseVoice',(key)=>{
+
 
 				this.audios.forEach((audio,i)=>{
 					if(i>0 ){
@@ -116,9 +122,9 @@
 			var play = function() {
 				document.removeEventListener("WeixinJSBridgeReady", play);
 				document.removeEventListener("YixinJSBridgeReady", play);
+				s.playAudioMuted();
 				len && audio.play();
 				audio&&(audio.volume = .1);
-				s.playAudioMuted();
 				
 			};
 
@@ -143,6 +149,8 @@
 				var audio = this.$refs['music'][0];
 				audio[data ? 'play' : 'pause']();
 			});
+
+
 			
 
 		}

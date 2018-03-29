@@ -1,6 +1,7 @@
 import Vue from "vue";
 import './components/css/index.css';
 import Index from './components/index/index';
+import Share from './components/share/index';
 import Upload from './components/upload/index';
 import Main from './components/main/index';
 import Music from './components/music/index';
@@ -10,9 +11,13 @@ import {
 } from './components/lib/assets'
 import zmitiUtil from './components/lib/util.js'
 import $ from 'jquery';
-
+import './components/lib/touch.js'
 import vueTap from 'vue-js-tap';
 Vue.use(vueTap);
+
+//var VueTouch = im('vue-touch')
+/*import VueTouch from 'vue-touch';
+Vue.use(VueTouch, {name: 'v-touch'})*/
 
 
 var obserable = new Obserable();
@@ -43,21 +48,17 @@ new Vue({
 	el: '#app',
 	/*<audio ref='audio' src='./assets/music/bg.mp3'  loop></audio>
 
-	
-
-
 		<audio src='./assets/music/water.mp3' ref='water'></audio>
 		<audio src='./assets/music/photo.mp3' ref='photo'></audio>
 		<audio src='./assets/music/bg.mp3' ref='audio'></audio>
 		<audio src='./assets/music/tu.mp3' ref='tu' loop></audio>
 	*/
 	template: `<div>
+		<Music   :obserable='obserable'></Music>
 		<Index  v-if='show && !isShare'  :obserable='obserable'></Index>
 		<Main  v-if='show && !isShare'  :obserable='obserable'></Main>
 		<Upload  v-if='show && !isShare'  :obserable='obserable'></Upload>
-		<Music   :obserable='obserable'></Music>
-		
-		
+		<Share  v-if='show'    :obserable='obserable'></Share>
 		<div  v-if='!loaded' :style='{background:"#158ae4"}' class='zmiti-loading lt-full'>
 			<div class='zmiti-loading-ui'>
 				 <a href="#">
@@ -98,10 +99,7 @@ new Vue({
 			}
 			loadimg();
 		},
-		toggleMusic() {
-			var music = this.$refs['audio'];
-			music[music.paused ? 'play' : 'pause']()
-		},
+	
 		updatePv() {
 			$.ajax({
 				url: window.protocol + '//api.zmiti.com/v2/custom/update_pvnum/',
@@ -113,6 +111,8 @@ new Vue({
 				if (data.getret === 0) {
 					this.pv = data.totalpv;
 					this.randomPv = data.randtotalpv;
+
+					zmitiUtil.wxConfig('我是第'+this.pv+'位为雄安过周岁者',document.title);
 				}
 			});
 		}
@@ -121,7 +121,8 @@ new Vue({
 		Index,
 		Music,
 		Main,
-		Upload
+		Upload,
+		Share
 	},
 	mounted() {
 
