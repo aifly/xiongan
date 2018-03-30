@@ -44,9 +44,10 @@ $bgColor: #4081dd;
 	
 	.zmiti-xiongan{
 		@include pos(a);
-		top: 20%;
+		top: 10%;
+		width: 14rem;
+		left: -2rem;
 		&.active{
-
 			@include animation(rotate1 .8s  linear forwards);
 		}
 	}
@@ -89,7 +90,7 @@ $bgColor: #4081dd;
 		@include br(10px);
 		@include pos(a);
 		left: 4rem;
-		bottom: .5rem;
+		bottom: 1rem;
 
 		z-index: 10;
 		color:#ca141f;

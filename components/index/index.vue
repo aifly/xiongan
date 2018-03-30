@@ -35,14 +35,14 @@
 			</div>
 		</div>
 		
-
+<!-- 
 		<div v-show='showCloud' class="lt-full">
 			<div class="lt-full"  :style="{background:'url('+imgs.kf_cloud_00000+')'}">
 				
 			</div>
-		</div>
+		</div> -->
 
-		<div v-show='showCloud' class="lt-full zmiti-cloud2">
+		<div v-if='showCloud' class="lt-full zmiti-cloud2">
 			<div class="lt-full" v-show='i<cloudIndex' :style="{background:'url('+imgs['kf_cloud_0000'+i]+')',backgroundSize:'cover'}" v-for='(img,i) in mainImgList'>
 			</div>
 		</div>
@@ -113,7 +113,10 @@
 								data:{
 									show:true
 								}
-							})
+							});
+							setTimeout(()=>{
+								this.showCloud = false;
+							},1000)
 							clearInterval(t);
 							return;
 						}

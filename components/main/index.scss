@@ -82,7 +82,8 @@ $color: #fffb88;
 			text-indent: 2em;
 			margin-left: 40px;
 			margin-top: 10px;
-			color:#828a8f;
+			//color:#828a8f;
+			color:#333;
 		}
 		&>h4{
 			text-indent: 0;
@@ -165,6 +166,7 @@ $color: #fffb88;
 		z-index: 44;
 		z-index: 100;
 
+
 		&:before,&:after{
 			content:"";
 			@include pos(a);
@@ -175,6 +177,8 @@ $color: #fffb88;
 			background: #fff;
 			border-top-left-radius: 10px;
 			border-bottom-left-radius: 10px;
+			box-shadow: 0 0 20px rgba(0,0,0,.7);
+			@include animation(ar 1s linear infinite alternate);
 		}
 
 		&:after{
@@ -202,6 +206,7 @@ $color: #fffb88;
 			background: #fff;
 			border-top-left-radius: 10px;
 			border-bottom-left-radius: 10px;
+			@include animation(ar .6s linear infinite alternate);
 		}
 
 		&:after{
@@ -213,4 +218,17 @@ $color: #fffb88;
 			
 		}
 	}
+}
+
+
+
+@-webkit-keyframes ar {
+	from {
+		margin-top: -5px;
+	}
+
+	to {
+		margin-top: 5px;
+	}
+
 }
