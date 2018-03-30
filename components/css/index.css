@@ -253,7 +253,8 @@ img {
   z-index: 300;
   text-align: right; }
   .zmiti-mask img {
-    width: 6rem; }
+    width: 6rem;
+    margin-right: 20px; }
 
 @-webkit-keyframes scale {
   from {

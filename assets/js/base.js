@@ -21,8 +21,7 @@ var imgs = {
 
 	cloud:'./assets/images/cloud.jpg',
 	shareBg:'./assets/images/share-bg.jpg',
-	caidai1:'./assets/images/caidai1.png',
-	caidai2:'./assets/images/caidai2.png',
+	shareimgBg:'./assets/images/share-img-bg.png',
 	textBg:'./assets/images/text-bg.png',
 
 	xiongan:'./assets/images/xiongan.png',
@@ -30,6 +29,8 @@ var imgs = {
 	scan:'./assets/images/scan.png',
 	upload:'./assets/images/upload.png',
 	year:'./assets/images/year.png',
+	close:'./assets/images/close.png',
+	shiji:'./assets/images/shiji.png',
 	title:'./assets/images/title.png',
 	title1:'./assets/images/title1.png',
 	qrcode:'./assets/images/qrcode.png',
@@ -58,7 +59,7 @@ for (var attr in imgs) {
 	arr.push(imgs[attr]);
 }
 
-var xionganDesc = '雄安新区雄安新区（Xiongan New Area）[1]  位于中国河北省保定市境内，地处北京、天津、保定腹地，规划范围涵盖河北省雄县、容城、安新。 '
+var xionganDesc ='';// '雄安新区雄安新区（Xiongan New Area）[1]  位于中国河北省保定市境内，地处北京、天津、保定腹地，规划范围涵盖河北省雄县、容城、安新。 '
 
 var mainImgList = [
 	{
@@ -165,7 +166,7 @@ mainImgList = [
 var musics = {
 	music: {
 		src: './assets/music/bg.mp3',
-		autoplay: 'autoplay',
+		autoplay: false,
 		name: 'bg',
 		loop: true
 	},

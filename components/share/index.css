@@ -45,6 +45,12 @@
   .zmiti-share-main-ui.show {
     opacity: 1;
     z-index: 1010; }
+  .zmiti-share-main-ui .zmiti-share-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0; }
   .zmiti-share-main-ui .zmiti-createimg {
     box-sizing: border-box;
     position: absolute;
@@ -70,26 +76,26 @@
       position: absolute;
       color: #ca141f;
       font-size: .4rem;
-      bottom: 0;
+      bottom: .4rem;
       width: .4rem;
-      left: 100%; }
+      left: 98%; }
   .zmiti-share-main-ui .zmiti-share-main {
     height: 100%;
     top: 0;
+    box-sizing: border-box;
     width: 100%;
     display: -webkit-box;
     -webkit-box-align: center;
     -webkit-box-pack: center;
     -webkit-box-orient: vertical; }
     .zmiti-share-main-ui .zmiti-share-main > div {
-      width: 10rem; }
+      width: 10rem;
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9); }
       .zmiti-share-main-ui .zmiti-share-main > div:nth-of-type(1) {
         -webkit-box-flex: 1;
-        background: #fff;
         position: relative;
-        border-radius: 10px;
-        padding: 10px;
-        box-sizing: border-box; }
+        border-radius: 10px; }
         .zmiti-share-main-ui .zmiti-share-main > div:nth-of-type(1):before {
           content: '';
           width: 100%;
@@ -106,25 +112,29 @@
       .zmiti-share-main-ui .zmiti-share-main .zmiti-share-img-C > div {
         width: 100%; }
         .zmiti-share-main-ui .zmiti-share-main .zmiti-share-img-C > div:nth-of-type(1) {
+          margin-top: -20px;
+          margin-left: -4px;
           -webkit-box-flex: 1;
           border-bottom-left-radius: 220px; }
         .zmiti-share-main-ui .zmiti-share-main .zmiti-share-img-C > div:nth-of-type(2) {
           position: relative;
           height: 2.5rem; }
           .zmiti-share-main-ui .zmiti-share-main .zmiti-share-img-C > div:nth-of-type(2) .zmiti-qrcode-img {
-            width: 2rem;
+            width: 2.3rem;
             position: absolute;
             right: 0;
             bottom: 0; }
           .zmiti-share-main-ui .zmiti-share-main .zmiti-share-img-C > div:nth-of-type(2) .zmiti-liulian {
             position: absolute;
-            width: 4.5rem;
-            bottom: .3rem;
-            left: .3rem; }
+            width: 7rem;
+            bottom: .5rem;
+            left: 0rem; }
       .zmiti-share-main-ui .zmiti-share-main .zmiti-share-img-C .zmiti-date {
         color: #9d9d9d;
-        margin-left: 2.2rem;
-        margin-top: 10px; }
+        margin-top: 10px;
+        position: absolute;
+        bottom: 0;
+        left: 4.5rem; }
       .zmiti-share-main-ui .zmiti-share-main .zmiti-share-img-C .zmiti-headimg {
         width: 2.1rem;
         height: 2.1rem;

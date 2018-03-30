@@ -1,22 +1,22 @@
 <template>
-	<div  class="lt-full zmiti-index-main-ui "   :class="{'show':show}">
+	<div v-tap='[entry]'  class="lt-full zmiti-index-main-ui "   :class="{'show':show}">
 		
 		<div v-if='!showCloud'>
-			<div class='zmiti-year'>
-				<img :src="imgs.year">
+			<div class='zmiti-year' >
+				<img @touchstart='imgStart($event)' :src="imgs.year">
 			</div>
 
 			<div class='zmiti-title1'>
-				<img :src="imgs.title1">
+				<img @touchstart='imgStart($event)' :src="imgs.title1">
 			</div>
 		
 			<div class='zmiti-cloud' :class='{"active":beginEntry}'>
-				<img :src="imgs.cloud">
+				<img @touchstart='imgStart($event)' :src="imgs.cloud">
 			</div>
 			
 
 			<div class='zmiti-xiongan' :class='{"active":beginEntry}'>
-				<img :src="imgs.xiongan">
+				<img @touchstart='imgStart($event)' :src="imgs.xiongan" draggable='false'>
 			</div>
 
 			<div class="zmiti-text">
@@ -25,12 +25,12 @@
 		
 
 			<div class="zmiti-logo">
-				<img :src="imgs.logo">
-				<span>新华社新媒体中心</span>
+				<img @touchstart='imgStart($event)' :src="imgs.logo">
+				<span></span>
 			</div>
 
 
-			<div class="zmiti-entry" v-tap='[entry]'>
+			<div class="zmiti-entry" >
 				进入
 			</div>
 		</div>
@@ -43,7 +43,7 @@
 		</div>
 
 		<div v-show='showCloud' class="lt-full zmiti-cloud2">
-			<div class="lt-full" v-show='i<cloudIndex' :style="{background:'url('+imgs['kf_cloud_0000'+i]+')'}" v-for='i in [0,1,2,3,4,5,6,7,8,9,10,11,12]'>
+			<div class="lt-full" v-show='i<cloudIndex' :style="{background:'url('+imgs['kf_cloud_0000'+i]+')',backgroundSize:'cover'}" v-for='(img,i) in mainImgList'>
 			</div>
 		</div>
 
@@ -54,7 +54,7 @@
 
 <script>
 	import './index.css';
-	import {imgs} from '../lib/assets.js';
+	import {imgs,mainImgList} from '../lib/assets.js';
 	import zmitiUtil from '../lib/util';
 	import $ from 'jquery';
 	import Toast from '../toast/toast';
@@ -68,6 +68,7 @@
 				toastMsg:'',
 				cloudIndex:0,
 				showBtns:false,
+				mainImgList,
 				showMasks:false,
 				transX:0,
 				transY:0,
@@ -86,6 +87,10 @@
 		},
 		
 		methods:{
+
+			imgStart(e){
+				e.preventDefault(); 
+			},
 
 			entry(){
 

@@ -17,6 +17,15 @@ $color:#ca141f;
 		opacity: 1;
 		z-index: 1010;
 	}
+
+
+	.zmiti-share-bg{
+		@include pos(a);
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+	}
 	
 	.zmiti-createimg {
 		//border: 6px solid $color;
@@ -48,9 +57,10 @@ $color:#ca141f;
 			@include pos(a);
 			color: $color;
 			font-size: .4rem;
-			bottom: 0;
+			bottom: .4rem;
 			width: .4rem;
-			left: 100%;
+			left: 98%;
+
 		}
 
 		
@@ -60,18 +70,20 @@ $color:#ca141f;
 	.zmiti-share-main{
 		height: 100%;
 		top: 0;
+		
+		box-sizing:border-box;
 		width: 100%;
 		@include displayBox(vertical);
 		&>div{
 			width: 10rem;
+			@include transform(scale(.9));
 			
 			&:nth-of-type(1){
 				-webkit-box-flex:1;
-				background: #fff;
+				//background: #fff;
 				@include pos(r);
 				@include br(10px);
-				padding: 10px;
-				box-sizing:border-box;
+				
 				&:before{
 					content:'';
 					width: 100%;
@@ -94,6 +106,8 @@ $color:#ca141f;
 			&>div{
 				width: 100%;	
 				&:nth-of-type(1){
+					margin-top: -20px;
+					margin-left: -4px;
 					-webkit-box-flex:1;
 					border-bottom-left-radius: 220px;
 				}
@@ -102,7 +116,7 @@ $color:#ca141f;
 
 					height: 2.5rem;
 					.zmiti-qrcode-img{
-						width: 2rem;
+						width: 2.3rem;
 						@include pos(a);
 						right: 0;
 						bottom: 0;
@@ -110,17 +124,19 @@ $color:#ca141f;
 					}
 					.zmiti-liulian{
 						@include pos(a);
-						width: 4.5rem;
-						bottom: .3rem;
-						left: .3rem;
+						width: 7rem;
+						bottom: .5rem;
+						left: 0rem;
 					}
 				}
 			}
 
 			.zmiti-date{
 				color:#9d9d9d;
-				margin-left: 2.2rem;
 				margin-top: 10px;
+				@include pos(a);
+				bottom: 0;
+				left: 4.5rem;
 			}
 			.zmiti-headimg{
 				$size:2.1rem;

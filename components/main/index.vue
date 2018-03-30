@@ -7,17 +7,23 @@
 			<div class="zmiti-main-canvas-C"  style="z-index: 10"   :style="{zIndex:isNext?9:19}">
 				<canvas :width='viewW' :height="viewH" ref='canvas1'  ></canvas>
 			</div>
+
+			<transition name='text'>
+				<div class="zmiti-dashiji" v-if='showShiji' v-tap='[hideShiji]'>
+					<img :src="imgs.shiji">
+				</div>
+			</transition>
 			
 			<transition name='text'>
-				<div class="zmiti-img-text" v-if='showText && mainImgList[index][0]'>
+				<div class="zmiti-img-text" v-if='showText && mainImgList[index][0] && !showShiji'>
 					<img :src="imgs.textBg" class="zmiti-text-bg">
 					<h4>{{mainImgList[index][0].date}}</h4>
 					<div>{{mainImgList[index][0].text}}</div>
-					<div class="zmiti-caidai">
-						<img :src="imgs.caidai1">
-					</div>
-					<div class="zmiti-caidai zmiti-caidai1">
-						<img :src="imgs.caidai2">
+					<div class="zmiti-text-line">
+						<span>
+							
+						</span>
+						<img :src="imgs.close" v-tap='[close,"$event"]'>
 					</div>
 				</div>
 			</transition>
@@ -31,7 +37,7 @@
 				<img :src="imgs.title">
 			</div>
 
-			<div class="zmiti-year">
+			<div class="zmiti-year" v-if='false'>
 				<img :src="imgs.year">
 			</div>
 
@@ -56,6 +62,7 @@
 				showTeam:false,
 				showQrcode:false,
 				show:false,
+				showShiji:false,
 				mainImgList,
 				showText:true,
 				index:0,
@@ -71,6 +78,15 @@
 		},
 		
 		methods:{
+
+			hideShiji(){
+				this.showShiji = false;
+			},
+
+			close(e){
+				e.preventDefault();
+				this.showShiji = true;
+			},
 
 			photo(){
 				var {obserable} = this;

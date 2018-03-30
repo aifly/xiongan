@@ -34,9 +34,25 @@ $color: #fffb88;
 		left: 0;top: 0;		
 	}
 
-	.zmiti-img-text{
+	.zmiti-dashiji{
+		@include pos(a);
+		width: 1.6rem;
+		top: 1.8rem;
+		left: .5rem;
+		z-index: 102;
 
-	
+		&.text-enter-active, &.text-leave-active {
+			@include transition(.5s);
+			//@include transform(translate3d(0,20px,0));
+		}
+
+		&.text-enter, &.text-leave-to {
+			opacity: 0;
+			@include transform(translate3d(0,-30px,0));
+		}
+	}
+
+	.zmiti-img-text{
 		&.text-enter-active, &.text-leave-active {
 			@include transition(.5s);
 			//@include transform(translate3d(0,20px,0));
@@ -50,7 +66,7 @@ $color: #fffb88;
 		@include pos(a);
 		width: 8rem;
 		left: 1rem;
-		top: 4rem;
+		top: 3.5rem;
 		z-index: 40;
 		padding: 24px;
 		box-sizing:border-box;
@@ -90,6 +106,27 @@ $color: #fffb88;
 			width: .5rem;
 		}
 
+		.zmiti-text-line{
+			@include pos(a);
+			width: 1rem;
+			height: 4rem;
+			right: .5rem;
+			img{
+				width: .6rem;
+				@include pos(a);
+				left: .2rem;
+				bottom: 0;
+			}
+			span{
+				width: .1rem;
+				@include pos(a);
+				left: .45rem;
+				top:0;
+				height: 100%;
+				background: rgba(255,255,227,.8);
+			}
+		}
+
 
 	}
 
@@ -98,6 +135,7 @@ $color: #fffb88;
 		z-index: 20;
 		top: 0;
 		left: 0;
+		width: 4.5rem;
 	}
 
 	.zmiti-year{
@@ -111,7 +149,7 @@ $color: #fffb88;
 		@include pos(a);
 		width: 2rem;
 		z-index: 20;
-		bottom: 1rem;
+		bottom: .7rem;
 		left: 4rem;
 		text-align: center;
 		color:#fff;

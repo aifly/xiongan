@@ -1,7 +1,7 @@
 <template>
 	<transition name='upload'>
 		<div class="lt-full zmiti-upload-main-ui "  v-show='show' ref='page'>
-			<div class="lt-full " :style="{background: 'url('+imgs.img1+') no-repeat center center',backgroundSize:'cover','-webkit-filter':'blur(14px)'}"></div>
+			<div class="lt-full " :style="{background: 'url('+mainImgList[index][0].url+') no-repeat center center',backgroundSize:'cover','-webkit-filter':'blur('+blur+'px)'}"></div>
 
 			<div class="zmiti-upload-C lt-full">
 				<div class="zmiti-upload-main">
@@ -19,7 +19,7 @@
 			<div class="zmiti-upload-bottom" ref='list'>
 				<ul :style="{width:mainImgList.length*2.4+'rem'}">
 					<li v-tap='[tab,i]' v-for='(img,i) in mainImgList'>
-						<div :style="{background: 'url('+img[0].url+') no-repeat center center',backgroundSize:'cover'}"></div>
+						<div :class="{'active':i === index}" :style="{background: 'url('+img[0].url+') no-repeat center center',backgroundSize:'cover'}"></div>
 						<div>{{img[0].date}}</div>
 					</li>
 				</ul>
@@ -30,7 +30,7 @@
 					<div v-tap="[cancelClip]">取消</div>
 					<div v-tap="[beginFacedetection]">确定</div>
 				</header>
-				<div class="zmiti-photo-loading" v-if='!showClipImg && showClipPage'>图片加载中...</div>
+				<div class="zmiti-photo-loading" v-if='!showClipImg && showClipPage'>图片上传加载中...</div>
 				<div class="zmiti-clip-img">
 					 
 					<canvas ref='canvas' :width='viewW' :height='viewH - 1.5*viewW/10'></canvas>
@@ -69,6 +69,7 @@
 				offsetLeft:0,
 				clipSize:0,
 				transY:0,
+				blur:0,
 				iNow:0,
 				K:60,
 				viewW:window.innerWidth,
@@ -78,7 +79,8 @@
 				isNext:true,
 				headimg:"",
 				showClipPage:false,
-				showClipImg:false
+				showClipImg:false,
+				isEntryShare:false,
 			}
 		},
 		components:{
@@ -87,8 +89,14 @@
 		methods:{
 
 			beginFacedetection(){
+				
 				//this.$emit('play-show',true);
+				if(this.isEntryShare){
+					return;
+				}
 				this.headimg = '';
+				this.isEntryShare = true;
+
 
 				this.context.clearRect(0,0,this.viewW,this.viewH);
 				var {obserable} = this;
@@ -141,9 +149,17 @@
 
 				this.showSmileText = false;
 				this.showClipPage = true;
+				obserable.trigger({
+               		type:'setPlay',
+               		data:{
+               			display:'none'
+               		}
+                })
 
 				var formData = new FormData();
 	  		    var s = this;
+
+
 	  					
 			      formData.append('setupfile', this.$refs['file'].files[0]);
 			      formData.append('uploadtype', 0);
@@ -181,12 +197,7 @@
 					          	setTimeout(()=>{
 					          		s.initCanvas();
 					          	},100)
-					          	obserable.trigger({
-		                       		type:'setPlay',
-		                       		data:{
-		                       			display:'none'
-		                       		}
-		                        })
+					          	
 
 
 					          	s.deleteImg(url);
@@ -210,6 +221,7 @@
 				this.showClipPage = false;
 				this.smile = 0;
 				this.attractive = 0;
+				this.$refs['file'].value = '';
 				var {obserable} = this;
 				obserable.trigger({
                		type:'setPlay',
@@ -221,9 +233,19 @@
 			},
 
 			tab(i){
-				console.log(i)
+				//console.log(i)
+				this.index = i;
+				this.blur = 0;
+				setTimeout(()=>{
+					var t = setInterval(()=>{
+						this.blur+=1;
+						if(this.blur>=14){
+							clearInterval(t);
+						}
+					},40)
+				},600)
 				var {obserable} = this;
-				obserable.trigger({
+				/*obserable.trigger({
 					type:'toggleUpload',
 					data:{
 						show:false
@@ -235,7 +257,7 @@
 						show:true,
 						index:i
 					}
-				});
+				});*/
 			},
 
 			deleteImg(url){//删除原图
@@ -315,7 +337,7 @@
 					var clipCanvas = self.$refs['clip-canvas'];
 					var clipContext = clipCanvas.getContext('2d');
 
-					var clipCanvasH = self.clipSize * 14 /10;
+					var clipCanvasH = self.clipSize * 10 /10;
 					
 					self.showClipImg = true;
 
@@ -473,14 +495,26 @@
 
 			obserable.on('toggleUpload',(data)=>{
 				this.show = data.show;
+				
 
 				setTimeout(()=>{
 					this.scroll.refresh();
-				},100)
+					var t = setInterval(()=>{
+						this.blur+=1;
+						if(this.blur>=14){
+							clearInterval(t);
+						}
+					},40)
+				},600)
 			})
 
 			obserable.on('fillIndex',(data)=>{
 				this.index = data;
+			});
+
+			obserable.on('clearFile',()=>{
+				this.$refs['file'].value = '';
+				this.isEntryShare = false;
 			})
 		}
 	}

@@ -87,6 +87,9 @@ $color: #fffb88;
 					@include br(10px);
 					margin-bottom: 10px;
 					border:1px solid #fff;
+					&.active{
+						border:2px solid #ca141f;
+					}
 					box-sizing:border-box;
 
 				}

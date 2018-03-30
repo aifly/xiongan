@@ -37,9 +37,11 @@
 			toggleMusic() {
 
 				var music = this.$refs['music'][0];
-				music[music.paused ? 'play' : 'pause']()
+				music[music.paused ? 'play' : 'pause']();
+
 			},
 			playAudioMuted(){//静音播放
+
 				this.audios.forEach((audio,i)=>{
 					if(i>0){
 						if(audio.autoplay){
@@ -57,19 +59,16 @@
 			
 			var {obserable} = this;
 
-
-
-
 			var audio = this.$refs['music'][0];
 			var len = audio;
 			len && $(audio).on('play', () => {
 
+			
 				this.rotate = true;
+
 			}).on('pause', () => {
 				this.rotate = false;
 			});
-			
-
 
 			len && audio.play();
 			audio.volume = .1;
@@ -79,6 +78,7 @@
 			obserable.on('playVoice',(key)=>{
 				this.audios.forEach((audio,i)=>{
 					if(i>0 ){
+
 						if(audio.name === key){
 							this.$refs['music'][i].currentTime = 0;
 							this.$refs['music'][i].muted = false;//取消静音
@@ -90,13 +90,13 @@
 
 			obserable.on('pauseVoice',(key)=>{
 
-
 				this.audios.forEach((audio,i)=>{
 					if(i>0 ){
 						if(audio.name === key){
 							//audio.currentTime = 0;
-							this.$refs['music'][i].muted = false;//取消静音
+							
 							this.$refs['music'][i].pause();
+							this.$refs['music'][i].muted = false;//取消静音
 						}
 					}
 				})
@@ -145,6 +145,8 @@
 			}
 
 			obserable.on('toggleBgMusic', (data) => {
+
+
 
 				var audio = this.$refs['music'][0];
 				audio[data ? 'play' : 'pause']();

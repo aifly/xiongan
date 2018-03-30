@@ -51,11 +51,24 @@
     position: absolute;
     left: 0;
     top: 0; }
+  .zmiti-main-main-ui .zmiti-dashiji {
+    position: absolute;
+    width: 1.6rem;
+    top: 1.8rem;
+    left: .5rem;
+    z-index: 102; }
+    .zmiti-main-main-ui .zmiti-dashiji.text-enter-active, .zmiti-main-main-ui .zmiti-dashiji.text-leave-active {
+      -webkit-transition: 0.5s;
+      transition: 0.5s; }
+    .zmiti-main-main-ui .zmiti-dashiji.text-enter, .zmiti-main-main-ui .zmiti-dashiji.text-leave-to {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -30px, 0);
+      transform: translate3d(0, -30px, 0); }
   .zmiti-main-main-ui .zmiti-img-text {
     position: absolute;
     width: 8rem;
     left: 1rem;
-    top: 4rem;
+    top: 3.5rem;
     z-index: 40;
     padding: 24px;
     box-sizing: border-box; }
@@ -93,11 +106,29 @@
       right: .4rem;
       top: -1rem;
       width: .5rem; }
+    .zmiti-main-main-ui .zmiti-img-text .zmiti-text-line {
+      position: absolute;
+      width: 1rem;
+      height: 4rem;
+      right: .5rem; }
+      .zmiti-main-main-ui .zmiti-img-text .zmiti-text-line img {
+        width: .6rem;
+        position: absolute;
+        left: .2rem;
+        bottom: 0; }
+      .zmiti-main-main-ui .zmiti-img-text .zmiti-text-line span {
+        width: .1rem;
+        position: absolute;
+        left: .45rem;
+        top: 0;
+        height: 100%;
+        background: rgba(255, 255, 227, 0.8); }
   .zmiti-main-main-ui .zmiti-title {
     position: absolute;
     z-index: 20;
     top: 0;
-    left: 0; }
+    left: 0;
+    width: 4.5rem; }
   .zmiti-main-main-ui .zmiti-year {
     position: absolute;
     z-index: 20;
@@ -107,7 +138,7 @@
     position: absolute;
     width: 2rem;
     z-index: 20;
-    bottom: 1rem;
+    bottom: .7rem;
     left: 4rem;
     text-align: center;
     color: #fff; }
