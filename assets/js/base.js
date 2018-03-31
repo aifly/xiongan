@@ -5,18 +5,22 @@ var imgs = {
 	logo: './assets/images/logo.png',
 
 	arrow: './assets/images/arrow.png',
-	img1:'./assets/images/1.jpg',
-	img2:'./assets/images/2.jpg',
-	img3:'./assets/images/3.jpg',
-	img4:'./assets/images/4.jpg',
-	img5:'./assets/images/5.jpg',
-	img6:'./assets/images/6.jpg',
-	img7:'./assets/images/7.jpg',
-	img8:'./assets/images/8.jpg',
-	img9:'./assets/images/9.jpg',
-	img10:'./assets/images/10.jpg',
-	img11:'./assets/images/11.jpg',
-	img12:'./assets/images/12.jpg',
+	img1:'./assets/images/1-1.jpg',
+	img2:'./assets/images/2-1.jpg',
+	img3:'./assets/images/3-1.jpg',
+	img4:'./assets/images/4-1.jpg',
+	img5:'./assets/images/5-1.jpg',
+	img6:'./assets/images/6-1.jpg',
+	img7:'./assets/images/7-1.jpg',
+	img8:'./assets/images/8-1.jpg',
+	img9:'./assets/images/9-1.jpg',
+	img10:'./assets/images/10-1.jpg',
+	img11:'./assets/images/11-1.jpg',
+	img12:'./assets/images/12-1.jpg',
+	img13:'./assets/images/13-1.jpg',
+	img14:'./assets/images/14-1.jpg',
+	img15:'./assets/images/15-1.jpg',
+	img16:'./assets/images/16.jpg',
 
 
 	cloud:'./assets/images/cloud.jpg',
@@ -29,9 +33,9 @@ var imgs = {
 	scan:'./assets/images/scan.png',
 	upload:'./assets/images/upload.png',
 	year:'./assets/images/year.png',
-	close:'./assets/images/close.png',
+	//close:'./assets/images/close.png',
 	shiji:'./assets/images/shiji.png',
-	title:'./assets/images/title.png',
+	title:'./assets/images/title2.png',
 	title1:'./assets/images/title1.png',
 	qrcode:'./assets/images/qrcode.png',
 	liulian:'./assets/images/liulian.png',
@@ -157,6 +161,34 @@ mainImgList = [
 			url:imgs.img12,
 			text:'河北雄安新区管委会发布消息，48家企业获批入驻雄安新区。',
 			date:'2017年9月28日',
+			zIndex:98,
+		}
+	],[
+		{
+			url:imgs.img13,
+			text:'中国雄安建设投资集团有限公司成立。',
+			date:'2017年7月18日',
+			zIndex:98,
+		}
+	],[
+		{
+			url:imgs.img14,
+			text:'中共河北雄安新区工作委员会、河北雄安新区管理委员会获批设立。',
+			date:'2017年6月',
+			zIndex:98,
+		}
+	],[
+		{
+			url:imgs.img15,
+			text:'雄安新区发布“新区启动区城市设计国际咨询建议书征询”公告。',
+			date:'2017年6月26日',
+			zIndex:98,
+		}
+	],[
+		{
+			url:imgs.img16,
+			text:'中共中央国务院决定设立河北雄安新区消息发布。',
+			date:'2017年4月1日',
 			zIndex:98,
 		}
 	]

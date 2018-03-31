@@ -43,7 +43,8 @@
 		</div> -->
 
 		<div v-if='showCloud' class="lt-full zmiti-cloud2">
-			<div class="lt-full" v-show='i<cloudIndex' :style="{background:'url('+imgs['kf_cloud_0000'+i]+')',backgroundSize:'cover'}" v-for='(img,i) in mainImgList'>
+			<div class="lt-full" v-show='i<cloudIndex' :style="{background:'url('+imgs['kf_cloud_0000'+i]+')',backgroundSize:'cover'}" v-for='(img,i) in cloudList'>
+
 			</div>
 		</div>
 
@@ -69,6 +70,7 @@
 				cloudIndex:0,
 				showBtns:false,
 				mainImgList,
+				cloudList:new Array(12),
 				showMasks:false,
 				transX:0,
 				transY:0,
@@ -98,6 +100,7 @@
 				setTimeout(()=>{
 					this.showCloud = true;
 
+
 					var i=0;
 					var t = setInterval(()=>{
 						if(!imgs['kf_cloud_0000'+i]){
@@ -116,6 +119,7 @@
 							});
 							setTimeout(()=>{
 								this.showCloud = false;
+								this.show = false;
 							},1000)
 							clearInterval(t);
 							return;
@@ -123,8 +127,11 @@
 
 						this.cloudIndex++;
 
-						this.cloundUrl = imgs['kf_cloud_0000'+i];
-						this.style = {background: 'url('+this.cloundUrl+') no-repeat center center',backgroundSize:'cover'}
+						this.cloundUrl = imgs['kf_cloud_0000'+this.cloudIndex];
+						
+						if(	this.cloundUrl){
+							this.style = {background: 'url('+this.cloundUrl+') no-repeat center center',backgroundSize:'cover'}
+						}
 
 						i++;
 

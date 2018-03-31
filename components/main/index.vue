@@ -1,11 +1,11 @@
 <template>
 	<transition name='main'>
 		<div v-swipeup='next' v-swipeleft='next' v-swipedown='prev' v-swiperight='prev' class="lt-full zmiti-main-main-ui "  :class="{'show':show}" ref='page'>
-			<div class="zmiti-main-canvas-C"    :style="{zIndex:isNext?19:10}">
-				<canvas :width='viewW' :height="viewH" ref='canvas'  ></canvas>
+			<div class="zmiti-main-canvas-C"    :style="{zIndex:isNext?19:10,width:viewW+offsetLeft+'px',WebkitTransform:'translateX('+transX+'px)'}">
+				<canvas :width='viewW+offsetLeft' :height="viewH" ref='canvas'  ></canvas>
 			</div>
-			<div class="zmiti-main-canvas-C"  style="z-index: 10"   :style="{zIndex:isNext?9:19}">
-				<canvas :width='viewW' :height="viewH" ref='canvas1'  ></canvas>
+			<div class="zmiti-main-canvas-C"  style="z-index: 10"   :style="{zIndex:isNext?9:19,width:viewW+offsetLeft+'px',WebkitTransform:'translateX('+transX+'px)'}">
+				<canvas :width='viewW+offsetLeft' :height="viewH" ref='canvas1'  ></canvas>
 			</div>
 
 			<transition name='text'>
@@ -18,8 +18,12 @@
 				<div class="zmiti-img-text" v-if='showText && mainImgList[index][0] && !showShiji'>
 					<img :src="imgs.textBg" class="zmiti-text-bg">
 					<h4>{{mainImgList[index][0].date}}</h4>
-					<div>{{mainImgList[index][0].text}}</div>
-					<div class="zmiti-text-line">
+					<div>
+						{{mainImgList[index][0].text}}
+						<span class="zmiti-back" v-tap='[close,"$event"]'>收起<label>>></label></span>
+						
+					</div>
+					<div class="zmiti-text-line" hidden="">
 						<span>
 							
 						</span>
@@ -67,6 +71,8 @@
 				showText:true,
 				index:0,
 				iNow:0,
+				transX:0,
+				offsetLeft:200,
 				viewW:window.innerWidth,
 				viewH:window.innerHeight,
 				showMasks:false,
@@ -191,7 +197,7 @@
                 context.shadowColor = 'transparent';
                 context.globalAlpha = opacity;
 				this.drawImage(this.mainImgList[index][0].url,(img)=>{
-					context.drawImage(img,0,0,this.viewW,this.viewH);
+					context.drawImage(img,0,0,this.viewW+this.offsetLeft,this.viewH);
 					context.globalCompositeOperation = "destination-out";
 	                context.shadowBlur = 280;
 	                context.shadowColor = 'red';
@@ -223,6 +229,7 @@
 			
 			this.initCanvas();
 
+			this.transX = this.offsetLeft / 2 *-1;
 			var {obserable} = this;
 
 			obserable.on('toggleMain',(data)=>{
@@ -232,6 +239,39 @@
 					this.initCanvas();
 				}
 			})
+
+
+			var s = this;
+			s.lastX = '';
+			s.lastY = '';
+			var i =0 ;
+			var startX,startY,
+				maxValue=200;
+
+ 			window.addEventListener("deviceorientation", function(event) {
+			      
+			     // document.title = event.beta|0;
+			      i++;
+			      if(i===1){
+			      	startY = event.beta;
+			      }
+
+			      var x =  (event.gamma|0)*1.5,
+			      	  y = event.beta|0;
+
+			      if(x<-maxValue){
+			      	x=-maxValue;
+			      }
+			      if(x>maxValue){
+			      	x=maxValue
+			      }
+			     
+ 
+
+			      s.transX = x - 100 ;
+			      s.transY = y;
+
+			}, true);
 
 
 

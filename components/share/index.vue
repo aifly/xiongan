@@ -31,7 +31,7 @@
 						</h1>
 						<section><span>出品人：</span><span>陈凯星</span><span>冯瑛冰</span></section>
 						<section><span>监制：</span><span>马书平</span></section>	
-						<section><span>策划：</span><span>葛素表</span><span>张红河</span></section>
+						<section><span>策划：</span><span>葛素表</span><span>张洪河</span></section>
 						<section><span>统筹：</span><span>徐蕊</span><span>周年均</span></section>
 						<section><span>创意：</span><span>曹建礼</span></section>
 						<section><span>记者：</span><span>范世辉</span><span>牟宇</span><span>张润贞</span></section>

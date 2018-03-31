@@ -29,6 +29,7 @@
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
 .zmiti-main-main-ui {
+  overflow: hidden;
   opacity: 0;
   z-index: -1;
   -webkit-transition: 1.5s;
@@ -45,7 +46,9 @@
   .zmiti-main-main-ui > .zmiti-main-canvas-C {
     position: absolute;
     left: 0;
-    top: 0; }
+    top: 0;
+    -webkit-transition: 0.2s;
+    transition: 0.2s; }
   .zmiti-main-main-ui .zmiti-dashiji {
     position: absolute;
     width: 1.6rem;
@@ -65,7 +68,7 @@
     left: 1rem;
     top: 3.5rem;
     z-index: 40;
-    padding: 24px;
+    padding: 24px 24px 0 24px;
     box-sizing: border-box; }
     .zmiti-main-main-ui .zmiti-img-text.text-enter-active, .zmiti-main-main-ui .zmiti-img-text.text-leave-active {
       -webkit-transition: 0.5s;
@@ -74,6 +77,30 @@
       opacity: 0;
       -webkit-transform: translate3d(0, -30px, 0);
       transform: translate3d(0, -30px, 0); }
+    .zmiti-main-main-ui .zmiti-img-text .zmiti-back {
+      display: block;
+      width: 100%;
+      text-align: right;
+      position: relative;
+      float: right;
+      padding-right: 40px;
+      color: #0085d8; }
+      .zmiti-main-main-ui .zmiti-img-text .zmiti-back label {
+        display: none; }
+      .zmiti-main-main-ui .zmiti-img-text .zmiti-back:before, .zmiti-main-main-ui .zmiti-img-text .zmiti-back:after {
+        content: "";
+        position: absolute;
+        right: 12px;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        top: 14px;
+        border: 2px solid #0085d8;
+        border-bottom: none;
+        border-right: none;
+        width: 15px;
+        height: 15px; }
+      .zmiti-main-main-ui .zmiti-img-text .zmiti-back:after {
+        top: 24px; }
     .zmiti-main-main-ui .zmiti-img-text > img.zmiti-text-bg {
       position: absolute;
       width: 100%;
