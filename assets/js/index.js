@@ -165,7 +165,7 @@
 					url: window.protocol + '//api.zmiti.com/v2/custom/update_pvnum/',
 					type: 'post',
 					data: {
-						customid: 47
+						customid: 51
 					}
 				}).done(function (data) {
 					if (data.getret === 0) {
@@ -11982,7 +11982,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "F:\\xuchang2018\\project\\xiongan\\components\\index\\index.vue"
+	  var id = "E:\\project\\xiongan\\components\\index\\index.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -22275,7 +22275,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "F:\\xuchang2018\\project\\xiongan\\components\\toast\\toast.vue"
+	  var id = "E:\\project\\xiongan\\components\\toast\\toast.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -22299,8 +22299,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-5d6a8e10&file=toast.vue!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./toast.vue", function() {
-				var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-5d6a8e10&file=toast.vue!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./toast.vue");
+			module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-d026eea0&file=toast.vue!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./toast.vue", function() {
+				var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-d026eea0&file=toast.vue!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./toast.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -22392,7 +22392,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "F:\\xuchang2018\\project\\xiongan\\components\\share\\index.vue"
+	  var id = "E:\\project\\xiongan\\components\\share\\index.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -22440,7 +22440,7 @@
 	// 						<section><span>策划：</span><span>葛素表</span><span>张洪河</span></section>
 	// 						<section><span>统筹：</span><span>徐蕊</span><span>周年均</span></section>
 	// 						<section><span>创意：</span><span>曹建礼</span></section>
-	// 						<section><span>记者：</span><span>范世辉</span><span>牟宇</span><span>张润贞</span></section>
+	// 						<section><span>记者：</span><span>范世辉</span><span>杨世尧</span><span>牟宇</span><span>张润贞</span></section>
 	// 						<section><span>编辑：</span><span>潘红宇</span><span>钱程</span><span>赵丹阳</span><span>路滨琪</span><span style="opacity:0;">徐徐达</span><span>屈萌</span><span>赵逸赫</span><span>乔煜成</span></section>
 	// 						<section><span>制作：</span><span>马发展</span></section>
 	// 						<section><span>技术支持：</span><span>麟腾传媒</span></section>
@@ -22903,7 +22903,7 @@
 /* 27 */
 /***/ (function(module, exports) {
 
-	module.exports = "\r\n\t<div  class=\"lt-full zmiti-share-main-ui \" :style=\"{background:'url('+imgs.shareBg+') no-repeat center top',backgroundSize:'cover'}\"   :class=\"{'show':show}\">\r\n\t\t \r\n\t\t<transition name=\"zmiti-scale\"\r\n\t\t\t@after-enter=\"afterEnter\"\r\n\t\t >\r\n\t\t    <div ref='createimgs'  class=\"zmiti-createimg\"  v-if='createImg'>\r\n\t\t\t\t<img :src=\"createImg\" alt=\"\">\r\n\t\t\t</div>\r\n\t\t  </transition>\r\n\r\n\t\t <div class=\"lt-full zmiti-share-main\" :style=\"{width:viewW+'px',height:viewH+'px',background:'url('+imgs.shareimgBg+') no-repeat center center',backgroundSize:'100% 100%'}\" v-if='!createImg && index>-1' ref='zmiti-cache-page'>\r\n\t\t \t<div class=\"zmiti-share-img-C\">\r\n\t\t \t\t<div class=\"zmiti-share-img\" :style=\"{background: 'url('+mainImgList[index][0].url+') no-repeat center center',backgroundSize:'cover'}\"></div>\r\n\t\t \t\t<div class=\"zmiti-qrcode\">\r\n\t\t \t\t\t<img @touchstart='imgStart($event)' :src=\"imgs.qrcode\" class=\"zmiti-qrcode-img\" />\r\n\t\t \t\t\t<img @touchstart='imgStart($event)' :src=\"imgs.liulian\" class=\"zmiti-liulian\">\r\n\t\t\t\t\t<div class=\"zmiti-date\">{{date}}</div>\r\n\t\t \t\t\t<div class=\"zmiti-headimg\" v-if='headimg'>\r\n\t\t \t\t\t\t<img @touchstart='imgStart($event)' :src=\"headimg\">\r\n\t\t \t\t\t</div>\r\n\t\t \t\t</div>\r\n\t\t \t</div>\r\n\t\t </div>\r\n\r\n\t\t <transition name='team'>\r\n\t\t\t\t<div v-if='showTeam' :style='{background:\"#fff url(\"+imgs.shareBg+\") no-repeat center top\",backgroundSize:\"cover\"}' class=\"zmiti-team-main-ui lt-full\" @touchend='showTeam = false'>\r\n\t\t\t\t\t<div class=\"zmiti-team-main\">\r\n\t\t\t\t\t\t<h1>\r\n\t\t\t\t\t\t\t<div>制作团队</div>\r\n\t\t\t\t\t\t</h1>\r\n\t\t\t\t\t\t<section><span>出品人：</span><span>陈凯星</span><span>冯瑛冰</span></section>\r\n\t\t\t\t\t\t<section><span>监制：</span><span>马书平</span></section>\t\r\n\t\t\t\t\t\t<section><span>策划：</span><span>葛素表</span><span>张洪河</span></section>\r\n\t\t\t\t\t\t<section><span>统筹：</span><span>徐蕊</span><span>周年均</span></section>\r\n\t\t\t\t\t\t<section><span>创意：</span><span>曹建礼</span></section>\r\n\t\t\t\t\t\t<section><span>记者：</span><span>范世辉</span><span>牟宇</span><span>张润贞</span></section>\r\n\t\t\t\t\t\t<section><span>编辑：</span><span>潘红宇</span><span>钱程</span><span>赵丹阳</span><span>路滨琪</span><span style=\"opacity:0;\">徐徐达</span><span>屈萌</span><span>赵逸赫</span><span>乔煜成</span></section>\r\n\t\t\t\t\t\t<section><span>制作：</span><span>马发展</span></section>\r\n\t\t\t\t\t\t<section><span>技术支持：</span><span>麟腾传媒</span></section>\r\n\t\t\t\t\t\t<section  style=\"margin-top: 30px\" class=\"zmiti-copyright\"><span>新华社新媒体中心、新华社摄影部、新华社河北分社联合出品</span></section>\r\n\t\t\t\t\t\t<div class=\"zmiti-back\">返回</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</transition>\r\n\t\t<transition name='btn'>\r\n\t\t\t<div class=\"zmiti-share-btns\" v-if='showBtns'>\r\n\t\t \t\t<div v-tap='[rechoose]'>重新选择</div>\r\n\t\t \t\t<div v-tap='[share]'>分享</div>\r\n\r\n\t\t \t\t<section class=\"zmiti-team\" v-tap='[showTeamPage]'>\r\n\t\t \t\t\t制作团队\r\n\t\t \t\t</section>\r\n\t\t \t</div>\r\n\t\t</transition>\r\n\r\n\r\n\r\n\t\t<div class=\"zmiti-mask\" v-if='showMasks' @touchstart='showMasks = false'>\r\n\t\t\t<img @touchstart='imgStart($event)' :src=\"imgs.arrow\">\r\n\t\t</div>\r\n\t\t\r\n\t</div>\r\n";
+	module.exports = "\r\n\t<div  class=\"lt-full zmiti-share-main-ui \" :style=\"{background:'url('+imgs.shareBg+') no-repeat center top',backgroundSize:'cover'}\"   :class=\"{'show':show}\">\r\n\t\t \r\n\t\t<transition name=\"zmiti-scale\"\r\n\t\t\t@after-enter=\"afterEnter\"\r\n\t\t >\r\n\t\t    <div ref='createimgs'  class=\"zmiti-createimg\"  v-if='createImg'>\r\n\t\t\t\t<img :src=\"createImg\" alt=\"\">\r\n\t\t\t</div>\r\n\t\t  </transition>\r\n\r\n\t\t <div class=\"lt-full zmiti-share-main\" :style=\"{width:viewW+'px',height:viewH+'px',background:'url('+imgs.shareimgBg+') no-repeat center center',backgroundSize:'100% 100%'}\" v-if='!createImg && index>-1' ref='zmiti-cache-page'>\r\n\t\t \t<div class=\"zmiti-share-img-C\">\r\n\t\t \t\t<div class=\"zmiti-share-img\" :style=\"{background: 'url('+mainImgList[index][0].url+') no-repeat center center',backgroundSize:'cover'}\"></div>\r\n\t\t \t\t<div class=\"zmiti-qrcode\">\r\n\t\t \t\t\t<img @touchstart='imgStart($event)' :src=\"imgs.qrcode\" class=\"zmiti-qrcode-img\" />\r\n\t\t \t\t\t<img @touchstart='imgStart($event)' :src=\"imgs.liulian\" class=\"zmiti-liulian\">\r\n\t\t\t\t\t<div class=\"zmiti-date\">{{date}}</div>\r\n\t\t \t\t\t<div class=\"zmiti-headimg\" v-if='headimg'>\r\n\t\t \t\t\t\t<img @touchstart='imgStart($event)' :src=\"headimg\">\r\n\t\t \t\t\t</div>\r\n\t\t \t\t</div>\r\n\t\t \t</div>\r\n\t\t </div>\r\n\r\n\t\t <transition name='team'>\r\n\t\t\t\t<div v-if='showTeam' :style='{background:\"#fff url(\"+imgs.shareBg+\") no-repeat center top\",backgroundSize:\"cover\"}' class=\"zmiti-team-main-ui lt-full\" @touchend='showTeam = false'>\r\n\t\t\t\t\t<div class=\"zmiti-team-main\">\r\n\t\t\t\t\t\t<h1>\r\n\t\t\t\t\t\t\t<div>制作团队</div>\r\n\t\t\t\t\t\t</h1>\r\n\t\t\t\t\t\t<section><span>出品人：</span><span>陈凯星</span><span>冯瑛冰</span></section>\r\n\t\t\t\t\t\t<section><span>监制：</span><span>马书平</span></section>\t\r\n\t\t\t\t\t\t<section><span>策划：</span><span>葛素表</span><span>张洪河</span></section>\r\n\t\t\t\t\t\t<section><span>统筹：</span><span>徐蕊</span><span>周年均</span></section>\r\n\t\t\t\t\t\t<section><span>创意：</span><span>曹建礼</span></section>\r\n\t\t\t\t\t\t<section><span>记者：</span><span>范世辉</span><span>杨世尧</span><span>牟宇</span><span>张润贞</span></section>\r\n\t\t\t\t\t\t<section><span>编辑：</span><span>潘红宇</span><span>钱程</span><span>赵丹阳</span><span>路滨琪</span><span style=\"opacity:0;\">徐徐达</span><span>屈萌</span><span>赵逸赫</span><span>乔煜成</span></section>\r\n\t\t\t\t\t\t<section><span>制作：</span><span>马发展</span></section>\r\n\t\t\t\t\t\t<section><span>技术支持：</span><span>麟腾传媒</span></section>\r\n\t\t\t\t\t\t<section  style=\"margin-top: 30px\" class=\"zmiti-copyright\"><span>新华社新媒体中心、新华社摄影部、新华社河北分社联合出品</span></section>\r\n\t\t\t\t\t\t<div class=\"zmiti-back\">返回</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</transition>\r\n\t\t<transition name='btn'>\r\n\t\t\t<div class=\"zmiti-share-btns\" v-if='showBtns'>\r\n\t\t \t\t<div v-tap='[rechoose]'>重新选择</div>\r\n\t\t \t\t<div v-tap='[share]'>分享</div>\r\n\r\n\t\t \t\t<section class=\"zmiti-team\" v-tap='[showTeamPage]'>\r\n\t\t \t\t\t制作团队\r\n\t\t \t\t</section>\r\n\t\t \t</div>\r\n\t\t</transition>\r\n\r\n\r\n\r\n\t\t<div class=\"zmiti-mask\" v-if='showMasks' @touchstart='showMasks = false'>\r\n\t\t\t<img @touchstart='imgStart($event)' :src=\"imgs.arrow\">\r\n\t\t</div>\r\n\t\t\r\n\t</div>\r\n";
 
 /***/ }),
 /* 28 */
@@ -22919,7 +22919,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "F:\\xuchang2018\\project\\xiongan\\components\\upload\\index.vue"
+	  var id = "E:\\project\\xiongan\\components\\upload\\index.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -25607,7 +25607,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "F:\\xuchang2018\\project\\xiongan\\components\\main\\index.vue"
+	  var id = "E:\\project\\xiongan\\components\\main\\index.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -25966,7 +25966,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "F:\\xuchang2018\\project\\xiongan\\components\\music\\index.vue"
+	  var id = "E:\\project\\xiongan\\components\\music\\index.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {

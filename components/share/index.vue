@@ -34,7 +34,7 @@
 						<section><span>策划：</span><span>葛素表</span><span>张洪河</span></section>
 						<section><span>统筹：</span><span>徐蕊</span><span>周年均</span></section>
 						<section><span>创意：</span><span>曹建礼</span></section>
-						<section><span>记者：</span><span>范世辉</span><span>牟宇</span><span>张润贞</span></section>
+						<section><span>记者：</span><span>范世辉</span><span>杨世尧</span><span>牟宇</span><span>张润贞</span></section>
 						<section><span>编辑：</span><span>潘红宇</span><span>钱程</span><span>赵丹阳</span><span>路滨琪</span><span style="opacity:0;">徐徐达</span><span>屈萌</span><span>赵逸赫</span><span>乔煜成</span></section>
 						<section><span>制作：</span><span>马发展</span></section>
 						<section><span>技术支持：</span><span>麟腾传媒</span></section>
