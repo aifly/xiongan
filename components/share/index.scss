@@ -34,7 +34,7 @@ $color:#ca141f;
 		z-index: 10;
 		height: 80/.84vh;
 		//left: 50%;
-		@include transform(scale(.75));
+		@include transform(scale(.82));
 		@include transformOrigin(center 10vh);
 		//border: 1px solid #000;
 
@@ -178,6 +178,11 @@ $color:#ca141f;
 		@include displayBox(horizontal);
 		-webkit-box-pack:justify;
 		-webkit-box-align:start;
+
+		&.restart{
+			-webkit-box-pack:center
+
+		}
 
 		.zmiti-team{
 			@include pos(a);

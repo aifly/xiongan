@@ -44,11 +44,11 @@
 				</div>
 			</transition>
 		<transition name='btn'>
-			<div class="zmiti-share-btns" v-if='showBtns'>
-		 		<div v-tap='[rechoose]'>重新选择</div>
-		 		<div v-tap='[share]'>分享</div>
-
-		 		<section class="zmiti-team" v-tap='[showTeamPage]'>
+			<div class="zmiti-share-btns" :class='{"restart":src}' v-if='showBtns'>
+		 		<div v-if='!src' v-tap='[rechoose]'>重新选择</div>
+		 		<div v-if='!src' v-tap='[share]'>分享</div>
+				<div v-if='src' v-tap='[restart]'>我也要合影</div>
+		 		<section v-if='!src' class="zmiti-team" v-tap='[showTeamPage]'>
 		 			制作团队
 		 		</section>
 		 	</div>
@@ -70,13 +70,14 @@
 	import $ from 'jquery';
 	import '../lib/html2canvas';
 	export default {
-		props:['obserable'],
+		props:['obserable','pv'],
 		name:'zmitiindex',
 		data(){
 			return{
 				imgs,
 				show:false,
 				toastMsg:'',
+				src:'',
 				headimg:'',
 				index:-1,
 				viewW:document.documentElement.clientWidth,
@@ -97,6 +98,10 @@
 		
 		methods:{
 
+
+			restart(){
+				window.location.href = window.location.href.split('?')[0]; 
+			},
 			imgStart(e){
 				e.preventDefault();
 			},
@@ -161,10 +166,37 @@
 		             			//document.title=s.viewH+','+(s.$refs['createimgs'].offsetHeight*1.2)
 								s.$refs['createimgs'].style.WebkitTransform = 'scale('+s.viewH/(s.$refs['createimgs'].offsetHeight*1.2)+')'
 
-								s.deleteImg(s.headimg);
+								///s.deleteImg(s.headimg);
 
 								
 							},100);
+
+
+
+							$.ajax({
+					          url:window.protocol+'//'+window.server+'.zmiti.com/v2/share/base64_image/',
+					          type: 'post',
+					          data: {
+					            setcontents: src,
+					            setwidth: dom.clientWidth,
+					            setheight:dom.clientHeight
+					          },
+					          success: function(data) {
+					            if (data.getret === 0) {
+					            	//s.deleteImg(dt.img);
+						            var src = data.getimageurl;
+									var url = window.location.href.split('#')[0];
+					            	console.log(src);
+
+									url = zmitiUtil.changeURLPar(url,'src',src);
+									url = zmitiUtil.changeURLPar(url,'num',s.pv);
+									zmitiUtil.wxConfig('我是第'+s.pv+'位为雄安过周岁者',window.desc,url);
+									
+								       
+					            }
+
+					          }
+					        })
 
 							/*zmitiUtil.wxConfig(window.zmitiConfig.shareTitle.replace(/{{totalPv}}/ig, s.totalpv),
 							window.zmitiConfig.shareDesc.replace(/{{periods}}/ig, s.periodsUpper[window.zmitiConfig.periods - 1]).replace(/{{pv}}/ig, s.randomPv));*/
@@ -214,9 +246,18 @@
 			
 
 			obserable.on('toggleShare',(data)=>{
+
 				this.show = data.show;
+
 				this.index = data.index;
 				this.headimg = data.headimg;
+				if(data.createImg){
+					this.src = data.createImg;
+					this.createImg = data.createImg;
+
+
+					zmitiUtil.wxConfig('我是第'+data.num+'位为雄安过周岁者',window.desc);
+				}
 				if(data.headimg){
 					this.html2img();
 					

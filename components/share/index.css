@@ -1,9 +1,4 @@
 @charset "UTF-8";
-/*.ant-btn:focus, .ant-btn:hover,.ant-input:focus, .ant-input:hover {
-    background-color: #fff;
-    border-color: #bf1616;
-    box-shadow: 0 0 0 2px rgba(191, 22, 22, 0.1);
-}*/
 .lt-full {
   width: 100%;
   height: 100%;
@@ -56,8 +51,8 @@
     position: absolute;
     z-index: 10;
     height: 80/.84vh;
-    -webkit-transform: scale(0.75);
-    transform: scale(0.75);
+    -webkit-transform: scale(0.82);
+    transform: scale(0.82);
     -webkit-transform-origin: center 10vh;
     transform-origin: center 10vh; }
     .zmiti-share-main-ui .zmiti-createimg img {
@@ -169,6 +164,8 @@
     -webkit-box-orient: horizontal;
     -webkit-box-pack: justify;
     -webkit-box-align: start; }
+    .zmiti-share-main-ui .zmiti-share-btns.restart {
+      -webkit-box-pack: center; }
     .zmiti-share-main-ui .zmiti-share-btns .zmiti-team {
       position: absolute;
       text-decoration: underline;

@@ -24,7 +24,7 @@ var imgs = {
 
 
 	cloud:'./assets/images/cloud.jpg',
-	shareBg:'./assets/images/share-bg.jpg',
+	shareBg:'./assets/images/share-bg1.jpg',
 	shareimgBg:'./assets/images/share-img-bg.png',
 	textBg:'./assets/images/text-bg.png',
 

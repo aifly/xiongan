@@ -58,7 +58,7 @@ new Vue({
 		<Index  v-if='show && !isShare'  :obserable='obserable'></Index>
 		<Main  v-if='show && !isShare'  :obserable='obserable'></Main>
 		<Upload  v-if='show && !isShare'  :obserable='obserable'></Upload>
-		<Share  v-if='show'    :obserable='obserable'></Share>
+		<Share :pv='pv' v-if='show'    :obserable='obserable'></Share>
 		<div  v-if='!loaded' :style='{background:"#158ae4"}' class='zmiti-loading lt-full'>
 			<div class='zmiti-loading-ui'>
 				 <a href="#">
@@ -112,7 +112,7 @@ new Vue({
 					this.pv = data.totalpv;
 					this.randomPv = data.randtotalpv;
 
-					zmitiUtil.wxConfig('我是第'+this.pv+'位为雄安过周岁者',document.title);
+					zmitiUtil.wxConfig(document.title,window.desc);
 				}
 			});
 		}
@@ -132,11 +132,23 @@ new Vue({
 
 		this.isShare = src && !isNaN(num);
 
-
-
 		this.src = src;
 
 		this.updatePv();
+
+		if(this.isShare){
+			setTimeout(()=>{
+				obserable.trigger({
+					type:'toggleShare',
+					data:{
+						show:true,
+						createImg:src,
+						num
+					}
+				})
+				//
+			},1000)
+		}
 
 
 		this.loading(arr, (s) => {
