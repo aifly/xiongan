@@ -25925,7 +25925,7 @@
 			var i = 0;
 			var startX,
 			    startY,
-			    maxValue = 200;
+			    maxValue = 100;
 
 			window.addEventListener("deviceorientation", function (event) {
 
