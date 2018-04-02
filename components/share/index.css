@@ -131,12 +131,12 @@
         bottom: 0;
         left: 4.5rem; }
       .zmiti-share-main-ui .zmiti-share-main .zmiti-share-img-C .zmiti-headimg {
-        width: 2.1rem;
-        height: 2.1rem;
+        width: 2.6rem;
+        height: 2.6rem;
         background: #fff;
-        border-radius: 1.05rem;
+        border-radius: 1.3rem;
         position: absolute;
-        top: -1.5rem;
+        top: -1.8571428571rem;
         padding: 10px;
         box-sizing: border-box; }
         .zmiti-share-main-ui .zmiti-share-main .zmiti-share-img-C .zmiti-headimg:before {
@@ -147,9 +147,9 @@
           width: 100%;
           height: 100%;
           box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5);
-          border-radius: 1.05rem; }
+          border-radius: 1.3rem; }
         .zmiti-share-main-ui .zmiti-share-main .zmiti-share-img-C .zmiti-headimg img {
-          border-radius: 1.05rem; }
+          border-radius: 1.3rem; }
   .zmiti-share-main-ui .zmiti-share-btns {
     height: 2.1rem;
     color: #fff;

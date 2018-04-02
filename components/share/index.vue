@@ -264,6 +264,16 @@
 				}
 			})
 
+			/*obserable.trigger({
+				type:'toggleShare',
+				data:{
+					index:0,
+					show:true,
+					headimg:imgs.logo
+				}
+			});*/
+
+
 
 		}
 	}

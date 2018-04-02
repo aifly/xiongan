@@ -1,4 +1,4 @@
-var imgs = {
+﻿var imgs = {
 	play: './assets/images/play.png',
 	
 
@@ -7,8 +7,8 @@ var imgs = {
 	arrow: './assets/images/arrow.png',
 	img1:'./assets/images/1-1.jpg',
 	img2:'./assets/images/2-1.jpg',
-	img3:'./assets/images/3-1.jpg',
-	img4:'./assets/images/4-1.jpg',
+	/*img3:'./assets/images/3-1.jpg',
+	img4:'./assets/images/4-1.jpg',*/
 	img5:'./assets/images/5-1.jpg',
 	img6:'./assets/images/6-1.jpg',
 	img7:'./assets/images/7-1.jpg',
@@ -89,11 +89,11 @@ mainImgList = [
 	],[
 		{
 			url:imgs.img2,
-			text:'习近平主持政治局常委会听取河北雄安新区规划编制汇报。',
+			text:'习近平主持中共中央政治局常委会听取河北雄安新区规划编制情况的汇报。',
 			date:'2018年2月22日',
 			zIndex:99,
 		}
-	],[
+	]/*,[
 		{
 			url:imgs.img3,
 			text:'中国银行与中国雄安建设投资集团有限公司、英国金丝雀码头集团共同签署《关于雄安新区金融科技城项目战略合作协议》。',
@@ -107,11 +107,11 @@ mainImgList = [
 			date:'2018年1月3日',
 			zIndex:98,
 		}
-	],[
+	]*/,[
 		{
 			url:imgs.img5,
 			text:'中央经济工作会议指出，高起点、高质量编制好雄安新区规划。',
-			date:'2017年12月18日',
+			date:'2017年12月',
 			zIndex:98,
 		}
 	],[
@@ -145,7 +145,7 @@ mainImgList = [
 	],[
 		{
 			url:imgs.img10,
-			text:'中国雄安建设投资集团完成工商注册登记。',
+			text:'中国雄安建设投资集团有限公司完成工商注册登记。',
 			date:'2017年7月18日',
 			zIndex:98,
 		}
@@ -159,14 +159,14 @@ mainImgList = [
 	],[
 		{
 			url:imgs.img12,
-			text:'雄安新区召开首场新闻发布会，面前全球招标启动区规划设计方案。',
+			text:'雄安新区召开首场新闻发布会，面向全球招标启动区规划设计方案。',
 			date:'2017年4月26日',
 			zIndex:98,
 		}
 	],[
 		{
 			url:imgs.img13,
-			text:'中共中央国务院决定设立河北雄安新区的消息发布。',
+			text:'中共中央、国务院决定设立河北雄安新区的消息发布。',
 			date:'2017年4月1日',
 			zIndex:98,
 		}
@@ -180,7 +180,7 @@ mainImgList = [
 	],[
 		{
 			url:imgs.img15,
-			text:'中央政治局会议审议《关于规划建设北京城市副中心和研究设立河北雄安新区的有关情况的汇报》。',
+			text:'中共中央政治局会议审议《关于规划建设北京城市副中心和研究设立河北雄安新区的有关情况的汇报》。',
 			date:'2016年5月27日',
 			zIndex:98,
 		}
